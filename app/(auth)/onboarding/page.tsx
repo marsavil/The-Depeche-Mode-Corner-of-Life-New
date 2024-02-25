@@ -6,6 +6,7 @@ import { redirect } from 'next/navigation';
 
 export default async function Page() {
   const devotee = await currentUser();
+  console.log(devotee?.id)
   const devoteeDB = await fetchDevotee(devotee?.id);
   const devoteeData = {
     id: devotee?.id,
