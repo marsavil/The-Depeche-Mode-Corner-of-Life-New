@@ -4,6 +4,7 @@ import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 import Topbar from "@/components/shared/Topbar";
 import { dark } from '@clerk/themes';
+import Bottombar from "@/components/shared/Bottombar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,13 +26,13 @@ export default function RootLayout({
     >
     <html lang="en">
       <body className={`${inter.className} bg-dark-1`}>
-      <Topbar />
+        <Topbar />
         <section className="main-container">
           <div className="w-full ma-w-4xl">
             {children}
           </div>
         </section>
-        
+        <Bottombar />
       </body>
     </html>
   </ClerkProvider>

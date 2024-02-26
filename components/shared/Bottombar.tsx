@@ -1,23 +1,17 @@
-"use client";
-import { UserButton } from "@clerk/nextjs";
+'use client'
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 
-export default function Topbar() {
-  const router = useRouter();
+export default function Bottombar () {
   const pathname = usePathname();
-
-  return (
-    <div className="topbar" >
-      <Link href="/" className="flex items-center gap-4">
-        <Image src="/assets/logo.png" alt="logo" width={39} height={83} />
-        <Image src="/assets/page name.png" priority alt="logo" width={185} height={60} />
-      </Link>
-      <nav className="grid grid-cols-5 justify-between max-md:hidden">
+  const router = useRouter();
+  return(
+    <section className="bottombar">
+      <nav className="bottombar_container">
           <Link
             href="/songs"
-            className={`leftsidebar_link ${
+            className={`bottombar_link ${
               pathname === "/songs" && "bg-primary-500"
             }`}
           >
@@ -27,12 +21,12 @@ export default function Topbar() {
               width={28}
               height={28}
             />
-            <p className="text-light-1 ">Canciones</p>
+            <p className="text-subtle.medium text-light-1 max-sm:hidden">Canciones</p>
           </Link>
 
           <Link
             href="/news"
-            className={`leftsidebar_link ${
+            className={`bottombar_link ${
               pathname === "/news" && "bg-primary-500"
             }`}
           >
@@ -42,12 +36,12 @@ export default function Topbar() {
               width={28}
               height={28}
             />
-            <p className="text-light-1 ">Noticias</p>
+            <p className="text-subtle.medium text-light-1 max-sm:hidden">Noticias</p>
           </Link>
 
           <Link
             href="/albums"
-            className={`leftsidebar_link ${
+            className={`bottombar_link ${
               pathname === "/albums" && "bg-primary-500"
             }`}
           >
@@ -57,11 +51,11 @@ export default function Topbar() {
               width={28}
               height={28}
             />
-            <p className="text-light-1 ">Álbumes</p>
+            <p className="text-subtle.medium text-light-1 max-sm:hidden">Álbumes</p>
           </Link>
           <Link
             href="/top"
-            className={`leftsidebar_link ${
+            className={`bottombar_link ${
               pathname === "/top" && "bg-primary-500"
             }`}
           >
@@ -71,11 +65,11 @@ export default function Topbar() {
               width={28}
               height={28}
             />
-            <p className="text-light-1 ">Top</p>
+            <p className="text-subtle.medium text-light-1 max-sm:hidden">Top</p>
           </Link>
           <Link
             href="/profile"
-            className={`leftsidebar_link ${
+            className={`bottombar_link ${
               pathname === "/profile" && "bg-primary-500"
             }`}
           >
@@ -85,12 +79,9 @@ export default function Topbar() {
               width={28}
               height={28}
             />
-            <p className="text-light-1 ">Perfil</p>
+            <p className="text-subtle.medium text-light-1 max-sm:hidden">Perfil</p>
           </Link>
       </nav>
-      <div className="flex items-center gap-5">
-        <UserButton />
-      </div>
-    </div>
-  );
+    </section>
+  )
 }
