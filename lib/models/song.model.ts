@@ -39,6 +39,19 @@ const SongSchema = new mongoose.Schema({
       ref: "Studio"
     }
   ],
+  media: [
+    {
+      source: {
+        type: String,
+      },
+      route: {
+        type: String,
+      },
+      insert: {
+        type: String,
+      }   
+    }
+  ],
   rank: {
     type: Number,
     required: true,

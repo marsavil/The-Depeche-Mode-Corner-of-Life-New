@@ -1,5 +1,10 @@
 import mongoose from "mongoose";
 const AlbumSchema = new mongoose.Schema({
+  id: {
+    type: String,
+    required: true,
+    unique: true
+  },
   title: {
     type: String,
     unique:true,
@@ -9,9 +14,19 @@ const AlbumSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  media: {
-    type: String,   
-  },
+  media: [
+    {
+      source: {
+        type: String,
+      },
+      route: {
+        type: String,
+      },
+      insert: {
+        type: String,
+      }   
+    }
+  ],
   date: {
     type: Date,
     required: true,
