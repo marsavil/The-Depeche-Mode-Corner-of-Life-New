@@ -4,6 +4,7 @@ import { fetchDevotee } from "@/lib/actions/devotee.actions";
 import { currentUser } from "@clerk/nextjs";
 import { redirect } from 'next/navigation';
 
+
 export default async function Page() {
   const devotee = await currentUser();
   console.log(devotee?.id)

@@ -74,6 +74,7 @@ const DevoteeProfile = ({ user, btnTitle }: Props) => {
       image: values.profile_photo,
       userId: user.id,
       path: pathname
+
   });
   if ( pathname === '/profile/edit') {
     router.back();
@@ -219,7 +220,7 @@ const DevoteeProfile = ({ user, btnTitle }: Props) => {
               </FormLabel>
               <FormControl>
                 <Input
-                  placeholder="Write your name"
+                  placeholder="Tu país de origen"
                   type="text"
                   className="account-form_input no-focus"
                   {...field}

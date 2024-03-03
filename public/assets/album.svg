@@ -1,11 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:bx="https://boxy-svg.com">
+<svg viewBox="0 0 500 500" style="filter: url('#duotone-filter-0');" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:bx="https://boxy-svg.com">
   <defs>
     <filter id="invert-filter-0" color-interpolation-filters="sRGB" x="-50%" y="-50%" width="200%" height="200%" bx:preset="invert 1 1">
       <feComponentTransfer>
         <feFuncR type="table" tableValues="1 0"/>
         <feFuncG type="table" tableValues="1 0"/>
         <feFuncB type="table" tableValues="1 0"/>
+      </feComponentTransfer>
+    </filter>
+    <filter id="duotone-filter-0" color-interpolation-filters="sRGB" x="-50%" y="-50%" width="200%" height="200%" bx:preset="duotone 1 #050505 #208dcc 1">
+      <feColorMatrix type="matrix" result="grayscale" values="1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 1 0"/>
+      <feComponentTransfer color-interpolation-filters="sRGB">
+        <feFuncR type="gamma" exponent="1.5" amplitude="1" offset="0"/>
+        <feFuncG type="gamma" exponent="1.5" amplitude="1" offset="0"/>
+        <feFuncB type="gamma" exponent="1.5" amplitude="1" offset="0"/>
+      </feComponentTransfer>
+      <feComponentTransfer color-interpolation-filters="sRGB" result="duotone">
+        <feFuncR type="table" tableValues="0.02 0.125"/>
+        <feFuncG type="table" tableValues="0.02 0.553"/>
+        <feFuncB type="table" tableValues="0.02 0.8"/>
+        <feFuncA type="table" tableValues="0 1"/>
       </feComponentTransfer>
     </filter>
   </defs>

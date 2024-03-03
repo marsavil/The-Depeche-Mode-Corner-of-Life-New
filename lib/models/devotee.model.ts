@@ -51,6 +51,11 @@ const devoteeSchema = new mongoose.Schema({
   onboarded: {
     type: Boolean,
     default: false,
+  },
+  isAdmin: {
+    type: Boolean,
+    required: true,
+    default: false
   }
 });
 const Devotee = mongoose.models.Devotee || mongoose.model("Devotee", devoteeSchema);

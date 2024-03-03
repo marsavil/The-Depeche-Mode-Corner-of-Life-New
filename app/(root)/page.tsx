@@ -1,6 +1,5 @@
 import SpotifyPlayer from "@/components/shared/SpotifyPlayer";
 import YoutubePlayer from "@/components/shared/YoutubePlayer";
-import { UserButton } from "@clerk/nextjs";
 
 export default function Home() {
   return (
