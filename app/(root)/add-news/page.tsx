@@ -3,7 +3,6 @@ import NewsForm from "@/components/forms/NewsForm";
 import { fetchDevotee } from "@/lib/actions/devotee.actions";
 import { currentUser } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
-import Swal from 'sweetalert2'
 
 export default async function Page() {
   const devotee = await currentUser();
